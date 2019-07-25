@@ -1,0 +1,19 @@
+ports:
+  - port: 8080
+    onOpen: open-preview
+  - port: 8100
+tasks:
+  - name: Server
+    init: >
+      cd express &&
+      yarn &&
+      gp sync-done yarn &&
+      mkdir data &&
+      curl -f --output data/loki.json https://storage.googleapis.com/dev-tube-index/loki-test.json &&
+      curl -f --output data/lunr.json https://storage.googleapis.com/dev-tube-index/lunr-test.json &&
+      curl -f --output data/board.json https://storage.googleapis.com/dev-tube-index/board.json
+    command: yarn run dev
+  - name: Client
+    init: gp sync-await yarn && yarn
+    command: yarn run dev
+    openMode: split-right

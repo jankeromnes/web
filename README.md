@@ -23,7 +23,7 @@ yarn run dev
 # go to server app
 cd express
 
-# install server app dependencies 
+# install server app dependencies
 yarn
 
 # download test data
@@ -37,6 +37,10 @@ yarn run dev
 ```
 
 Voila! The app is available via port `8100`.
+
+Alternatively, you can also run the app in Gitpod, a one-click dev environment for GitHub:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/watch-devtube/web)
 
 ## How to contribute content?
 
